@@ -5,26 +5,26 @@ sudo: false
 compiler:
   - gcc
 
-env:
-  - ENV_QTC_SOURCE="$TRAVIS_BUILD_DIR/qt-creator-3.5.1" ENV_QTC_BUILD="$TRAVIS_BUILD_DIR/qtc_build/3.5.1/lib/qtcreator/" ENV_QTC_VERSION="3.5.1" ENV_QTC_MV="5"
+# env:
+#   - ENV_QTC_SOURCE="$TRAVIS_BUILD_DIR/qt-creator-3.5.1" ENV_QTC_BUILD="$TRAVIS_BUILD_DIR/qtc_build/3.5.1/lib/qtcreator/" ENV_QTC_VERSION="3.5.1" ENV_QTC_MV="5"
 
-before_install:
-# Qt 5.5.0 and QtC 3.4.2
-  - add-apt-repository -y ppa:beineri/opt-qt55
-# GCC 4.8
-  - add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  - apt-get update -qq
-# QtC sources
-  - wget "http://download.qt.io/official_releases/qtcreator/3.5/3.5.1/qt-creator-opensource-src-3.5.1.tar.gz"
-  - tar xzf qt-creator-opensource-src-3.5.1.tar.gz
+# before_install:
+# # Qt 5.5.0 and QtC 3.4.2
+#   - add-apt-repository -y ppa:beineri/opt-qt55
+# # GCC 4.8
+#   - add-apt-repository -y ppa:ubuntu-toolchain-r/test
+#   - apt-get update -qq
+# # QtC sources
+#   - wget "http://download.qt.io/official_releases/qtcreator/3.5/3.5.1/qt-creator-opensource-src-3.5.1.tar.gz"
+#   - tar xzf qt-creator-opensource-src-3.5.1.tar.gz
 
-install:
-  - apt-get install qt55creator
-  - apt-get install -qq gcc-4.9 g++-4.9 
-  - update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
+# install:
+#   - apt-get install qt55creator
+#   - apt-get install -qq gcc-4.9 g++-4.9 
+#   - update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
 
-before_script:
-  - pwd
+# before_script:
+#   - pwd
 
-script:
-  - . /opt/qt55/bin/qt55-env.sh
+# script:
+#   - . /opt/qt55/bin/qt55-env.sh

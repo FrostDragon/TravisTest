@@ -1,6 +1,6 @@
 language: cpp
 
-sudo: false
+sudo: required
 
 compiler:
   - gcc
@@ -10,18 +10,18 @@ env:
 
 before_install:
 # Qt 5.5.0 and QtC 3.4.2
-  - add-apt-repository -y ppa:beineri/opt-qt55
+  - sudo add-apt-repository -y ppa:beineri/opt-qt55
 # GCC 4.8
-  - add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  - apt-get update -qq
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
 # QtC sources
   - wget "http://download.qt.io/official_releases/qtcreator/3.5/3.5.1/qt-creator-opensource-src-3.5.1.tar.gz"
   - tar xzf qt-creator-opensource-src-3.5.1.tar.gz
 
 install:
-  - apt-get install qt55creator
-  - apt-get install -qq gcc-4.9 g++-4.9 
-  - update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
+  - sudo apt-get install qt55creator
+  - sudo apt-get install -qq gcc-4.9 g++-4.9 
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
 
 before_script:
   - pwd

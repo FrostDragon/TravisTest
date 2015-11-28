@@ -25,7 +25,8 @@ install:
 
 before_script:
   - ls -l $TRAVIS_BUILD_DIR
-
+  - echo "${ENV_QTC_SOURCE}"
+  
 script:
   - . /opt/qt55/bin/qt55-env.sh
   - mkdir -p build && cd build

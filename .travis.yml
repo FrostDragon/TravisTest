@@ -38,9 +38,3 @@ script:
   - mkdir -p "${OUTPUT_PATH}" 
   - qmake ../testplugin.pro -r -spec linux-g++ CONFIG+=release
   - make
-  - find "$TRAVIS_BUILD_DIR/build/plugins"
-
-addons:
-  artifacts:
-    paths:
-      - ./build/plugins

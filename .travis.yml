@@ -17,6 +17,8 @@ before_install:
 # QtC sources
   - wget "http://download.qt.io/official_releases/qtcreator/3.5/3.5.1/qt-creator-opensource-src-3.5.1.tar.gz"
   - tar xzf qt-creator-opensource-src-3.5.1.tar.gz
+  - wget "http://download.qt.io/snapshots/qtcreator/3.5.1/latest/installer_source/qtcreator_linux-g++-Rhel6.6-x64.7z"
+  - 7zr x -o./qtc_build/3.5.1/ qtcreator_linux-g++-Rhel6.6-x64.7z
 
 install:
   - sudo apt-get install qt55creator
@@ -25,7 +27,7 @@ install:
 
 before_script:
   - ls -l $TRAVIS_BUILD_DIR
-  - echo "${ENV_QTC_SOURCE}"
+  - ls -l /opt
 
 script:
   - . /opt/qt55/bin/qt55-env.sh
